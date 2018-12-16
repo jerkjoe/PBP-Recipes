@@ -74,8 +74,8 @@ class Archive extends React.Component {
                     <h2>All Ingredients You Need</h2>
                     {this.props.selectedRecipes.length === 0
                         ? 'You have not selected any recipes'
-                        : ''}
-                    <ul>
+                        : 'For Recipes'}
+                    <ul className="selected-recipes">
                         {this.props.selectedRecipes.map((e, index) => {
                             return <li key={index}>{e}</li>
                         })}

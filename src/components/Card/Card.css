@@ -13,7 +13,7 @@ li {
 }
 .card {
     border: 1px solid #e3e3e3;
-    background-color: rgba(161, 206, 206, 0.192);
+    background:  linear-gradient(to bottom, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 100%);
     box-shadow: 8px 8px 10px 0 #bbc0be;
     width: 20%;
     min-width: 250px;
@@ -29,7 +29,7 @@ li {
 }
 
 .card.active {
-    box-shadow: 0 0 10px 2px #123456;
+    box-shadow: 0 0 10px 2px #38258f;
 }
 
 .card > h2 {
@@ -76,9 +76,13 @@ li {
 .toggle > span {
     padding: 5px 10px;
     cursor: pointer;
+    font-size: 14px;
+}
+.toggle > span > i {
+    margin-left: 5px;
 }
 .toggle:hover > span > i {
-    color: rgb(91, 206, 206);
+    color: rgb(255, 174, 0);
     transform: scale(1.2);
 }
 .info {
