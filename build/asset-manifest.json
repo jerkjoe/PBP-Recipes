@@ -1,13 +1,13 @@
 {
-  "main.css": "/static/css/main.b405af6d.chunk.css",
-  "main.js": "/static/js/main.f7823de7.chunk.js",
-  "main.js.map": "/static/js/main.f7823de7.chunk.js.map",
-  "static/js/1.12245c85.chunk.js": "/static/js/1.12245c85.chunk.js",
-  "static/js/1.12245c85.chunk.js.map": "/static/js/1.12245c85.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.229c360f.js",
-  "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
-  "static/css/main.b405af6d.chunk.css.map": "/static/css/main.b405af6d.chunk.css.map",
-  "index.html": "/index.html",
-  "precache-manifest.5f398176dfa2ae304f1ec84dff41866f.js": "/precache-manifest.5f398176dfa2ae304f1ec84dff41866f.js",
-  "service-worker.js": "/service-worker.js"
+  "main.css": "/PBP-Recipes/static/css/main.b405af6d.chunk.css",
+  "main.js": "/PBP-Recipes/static/js/main.c6356bf0.chunk.js",
+  "main.js.map": "/PBP-Recipes/static/js/main.c6356bf0.chunk.js.map",
+  "static/js/1.12245c85.chunk.js": "/PBP-Recipes/static/js/1.12245c85.chunk.js",
+  "static/js/1.12245c85.chunk.js.map": "/PBP-Recipes/static/js/1.12245c85.chunk.js.map",
+  "runtime~main.js": "/PBP-Recipes/static/js/runtime~main.6ef77f3e.js",
+  "runtime~main.js.map": "/PBP-Recipes/static/js/runtime~main.6ef77f3e.js.map",
+  "static/css/main.b405af6d.chunk.css.map": "/PBP-Recipes/static/css/main.b405af6d.chunk.css.map",
+  "index.html": "/PBP-Recipes/index.html",
+  "precache-manifest.b774b4fbae923675b796132edbf5d709.js": "/PBP-Recipes/precache-manifest.b774b4fbae923675b796132edbf5d709.js",
+  "service-worker.js": "/PBP-Recipes/service-worker.js"
 }
