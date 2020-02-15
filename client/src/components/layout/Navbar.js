@@ -10,39 +10,46 @@ const Navbar = ({ logout, auth: { isAuthenticated, loading } }) => {
         e.preventDefault();
         logout();
     };
+
+    const authLinks = (
+        <ul>
+            <li>
+                <Link to="/dashboard">
+                    {' '}
+                    <i className="fas fa-user" /> Dashboard
+                </Link>
+            </li>
+            <li>
+                <a href="#" onClick={onLogout}>
+                    <i className="fas fa-sign-out-alt" /> <span>Logout</span>
+                </a>
+            </li>
+        </ul>
+    );
+    const guestLinks = (
+        <ul>
+            <li>
+                <a href="profiles.html">Developers</a>
+            </li>
+            <li>
+                <Link to="/register">Register</Link>
+            </li>
+            <li>
+                <Link to="/login">Login</Link>
+            </li>
+        </ul>
+    );
+
     return (
         <nav className="navbar bg-dark">
             <h1>
-                <a href="index.html">
-                    <i className="fas fa-code"></i> DevConnector
-                </a>
+                <Link to="/">
+                    <i className="fas fa-code" /> DevConnector
+                </Link>
             </h1>
-            <ul>
-                <li>
-                    <a href="profiles.html">Developers</a>
-                </li>
-
-                {!loading ? (
-                    !isAuthenticated ? (
-                        <Fragment>
-                            <li>
-                                <Link to="/register">Register</Link>
-                            </li>
-                            <li>
-                                <Link to="/login">Login</Link>
-                            </li>
-                        </Fragment>
-                    ) : (
-                        <li>
-                            <a href="#" onClick={onLogout}>
-                                Logout
-                            </a>
-                        </li>
-                    )
-                ) : (
-                    ''
-                )}
-            </ul>
+            {!loading && (
+                <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
+            )}
         </nav>
     );
 };

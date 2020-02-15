@@ -116,10 +116,10 @@ router.post(
             res.json(profile);
         } catch (err) {
             console.error(err.message);
-            res.status.send('server error');
+            return res.status.send('server error');
         }
 
-        res.send('Hello');
+        // res.send('Hello');
     }
 );
 

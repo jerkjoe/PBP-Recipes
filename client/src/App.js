@@ -4,6 +4,8 @@ import Landing from './components/layout/Landing';
 import Alert from './components/layout/Alert';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
+import Dashboard from './components/dashboard/Dashboard';
+import PrivateRoute from './components/routing/PrivateRoute';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -42,6 +44,11 @@ function App() {
                                 path="/login"
                                 component={Login}
                             ></Route>
+                            <PrivateRoute
+                                exact
+                                component={Dashboard}
+                                path="/dashboard"
+                            ></PrivateRoute>
                         </Switch>
                     </section>
                 </Fragment>
