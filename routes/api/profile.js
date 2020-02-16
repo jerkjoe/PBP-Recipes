@@ -5,6 +5,7 @@ const router = express.Router();
 const auth = require('../../middleWare/auth');
 const Profile = require('../../models/Profile');
 const User = require('../../models/Users');
+const Post = require('../../models/Post');
 
 const { check, validationResult } = require('express-validator');
 // const jwt = require('jsonwebtoken');
@@ -163,6 +164,8 @@ router.get('/user/:user_id', async (req, res) => {
 router.delete('/', auth, async (req, res) => {
     try {
         // Todo remove users posts
+        await Post.deleteMany({ user: req.user.id });
+
         await Profile.findOneAndRemove({ user: req.user.id });
 
         await User.findOneAndRemove({ _id: req.user.id });
