@@ -11,7 +11,7 @@ import {
     GET_REPOS
 } from './types';
 
-export const getCurrentProfile = () => async dispatch => {
+export const getCurrentProfile = isDashboard => async dispatch => {
     try {
         const res = await axios.get('/api/profile/me');
         dispatch({
@@ -19,13 +19,25 @@ export const getCurrentProfile = () => async dispatch => {
             payload: res.data
         });
     } catch (err) {
-        dispatch({
-            type: PROFILE_ERROR,
-            payload: {
-                msg: err.response.statusText,
-                status: err.response.status
-            }
-        });
+        if (!isDashboard) {
+            dispatch({
+                type: PROFILE_ERROR,
+                payload: {
+                    msg: err.response.statusText,
+                    status: err.response.status,
+                    clear: true
+                }
+            });
+        } else {
+            dispatch({
+                type: PROFILE_ERROR,
+                payload: {
+                    msg: err.response.statusText,
+                    status: err.response.status,
+                    clear: false
+                }
+            });
+        }
     }
 };
 
@@ -252,4 +264,3 @@ export const getGithubRepos = username => async dispatch => {
         });
     }
 };
-

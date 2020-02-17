@@ -37,11 +37,15 @@ export default function(state = initialState, action) {
                 loading: false
             };
         case PROFILE_ERROR:
-            localStorage.removeItem('token');
+            if (payload.clear) {
+                localStorage.removeItem('token');
+            }
+
             return {
                 ...state,
                 error: payload,
-                loading: false
+                loading: false,
+                profile: null
             };
         case CLEAR_PROFILE:
             return {

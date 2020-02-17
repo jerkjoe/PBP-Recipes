@@ -28,25 +28,29 @@ const EditProfile = ({
     const [displaySocialInputs, toggleSocialInputs] = useState(false);
 
     useEffect(() => {
+        
         getCurrentProfile();
-
+        console.log(profile)
         setFormData({
             company: loading || !profile.company ? '' : profile.company,
-            website: loading || !profile.company ? '' : profile.website,
-            location: loading || !profile.company ? '' : profile.location,
-            bio: loading || !profile.company ? '' : profile.bio,
-            status: loading || !profile.company ? '' : profile.status,
+            website: loading || !profile.website ? '' : profile.website,
+            location: loading || !profile.location ? '' : profile.location,
+            bio: loading || !profile.bio ? '' : profile.bio,
+            status: loading || !profile.status ? '' : profile.status,
             githubusername:
-                loading || !profile.company ? '' : profile.githubusername,
+                loading || !profile.githubusername ? '' : profile.githubusername,
             skills:
-                loading || !profile.company ? '' : profile.skills.join(', '),
-            youtube: loading || !profile.company ? '' : profile.youtube,
-            facebook: loading || !profile.company ? '' : profile.facebook,
-            twitter: loading || !profile.company ? '' : profile.twitter,
-            linkedin: loading || !profile.company ? '' : profile.linkedin,
-            instagram: loading || !profile.company ? '' : profile.instagram
+                loading || !profile.skills ? '' : profile.skills.join(', '),
+            youtube: loading || !profile.social.youtube ? '' : profile.social.youtube,
+            facebook: loading || !profile.social.facebook ? '' : profile.social.facebook,
+            twitter: loading || !profile.social.twitter ? '' : profile.social.twitter,
+            linkedin: loading || !profile.social.linkedin ? '' : profile.social.linkedin,
+            instagram: loading || !profile.social.instagram ? '' : profile.social.instagram
+            
         });
+        console.log(formData)
     }, [loading, getCurrentProfile]);
+    
 
     const {
         company,
