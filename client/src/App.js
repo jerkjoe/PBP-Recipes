@@ -12,6 +12,8 @@ import AddEducation from './components/profile-forms/AddEducation';
 import Profiles from './components/profiles/Profiles';
 import Profile from './components/profile/Profile';
 import PrivateRoute from './components/routing/PrivateRoute';
+import Posts from './components/posts/Posts'
+import Post from './components/post/Post'
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -84,6 +86,17 @@ function App() {
                                 exact
                                 component={Profile}
                                 path="/profile/:id"
+                            ></PrivateRoute>
+                            
+                            <PrivateRoute
+                                exact
+                                component={Posts}
+                                path="/posts"
+                            ></PrivateRoute>
+                            <PrivateRoute
+                                exact
+                                component={Post}
+                                path={`/posts/:id`}
                             ></PrivateRoute>
                         </Switch>
                     </section>
